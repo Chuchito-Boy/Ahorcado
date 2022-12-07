@@ -53,7 +53,7 @@ def run():
       |
 =========''']
 
-    BD = ["DIEGO","CHRISTIAN","EDUARDO","JOHN","BRANDON"]
+                    BD = ["DIEGO","CHRISTIAN","EDUARDO","JOHN","BRANDON"]
 
     word = random.choice(BD)
     spaces = ["_"]*len(word)
@@ -86,7 +86,6 @@ def run():
             print("PERDISTE")
             break
             input()
-        
+
 if __name__ == '__main__':
     run()
-    
