@@ -57,7 +57,7 @@ def run():
 
     word = random.choice(BD)
     spaces = ["_"]*len(word)
-    attemps = 6
+    attemps = 0
 
     while True:
         system("cls")
@@ -72,8 +72,10 @@ def run():
             if character == letter:
                 spaces[idx] = letter
                 found = True
-        if not found:
-            attemps -= 1
+
+        if not found:     
+            if attemps <= 6:
+                attemps += 1
 
         if "_" not in spaces:
             system("cls")
@@ -81,7 +83,7 @@ def run():
             break
             input()
 
-        if attemps == 0:
+        if attemps > 6:
             system("cls")
             print("PERDISTE")
             break
