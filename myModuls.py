@@ -5,10 +5,10 @@ def run():
 
     my_menu = menu()
     palabra = random.choice(my_menu())
-    
+
     spaces = dibujar_espacios(palabra)
 
-    jugar(imagen=0,spaces=spaces,palabra=palabra)    
+    jugar(imagen=0,spaces=spaces,palabra=palabra)
 
 def dibujar_ahorcado(indice:int)->str:
 
@@ -73,7 +73,7 @@ def dibujar_ahorcado(indice:int)->str:
     #print(type(IMAGES[indice])) #tipo str
 
     return IMAGES[indice]
-    
+
 def menu():
     print("**************************")
     print("***     BIENVENIDO     ***")
@@ -136,12 +136,24 @@ def jugar(imagen:int,spaces:list,palabra:str):
 
             if "➖" not in spaces:
                 system("cls")
-                print("GANASTE")
+                print("""
+░██████╗░░█████╗░███╗░░██╗░█████╗░░██████╗████████╗███████╗
+██╔════╝░██╔══██╗████╗░██║██╔══██╗██╔════╝╚══██╔══╝██╔════╝
+██║░░██╗░███████║██╔██╗██║███████║╚█████╗░░░░██║░░░█████╗░░
+██║░░╚██╗██╔══██║██║╚████║██╔══██║░╚═══██╗░░░██║░░░██╔══╝░░
+╚██████╔╝██║░░██║██║░╚███║██║░░██║██████╔╝░░░██║░░░███████╗
+░╚═════╝░╚═╝░░╚═╝╚═╝░░╚══╝╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝""")
                 break
                 input()
 
             if imagen > 6:
                 system("cls")
-                print("PERDISTE")
+                print("""
+██████╗░███████╗██████╗░██████╗░██╗░██████╗████████╗███████╗
+██╔══██╗██╔════╝██╔══██╗██╔══██╗██║██╔════╝╚══██╔══╝██╔════╝
+██████╔╝█████╗░░██████╔╝██║░░██║██║╚█████╗░░░░██║░░░█████╗░░
+██╔═══╝░██╔══╝░░██╔══██╗██║░░██║██║░╚═══██╗░░░██║░░░██╔══╝░░
+██║░░░░░███████╗██║░░██║██████╔╝██║██████╔╝░░░██║░░░███████╗
+╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═════╝░╚═╝╚═════╝░░░░╚═╝░░░╚══════╝""")
                 break
                 input()
